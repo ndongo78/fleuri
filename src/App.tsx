@@ -1,4 +1,4 @@
-import { Header, Hero } from "./components"
+import { Header, Hero , NewProduct} from "./components"
 
 
 const  App=()=> {
@@ -7,6 +7,7 @@ const  App=()=> {
     <>
     <Header />
     <Hero />
+    <NewProduct />
     </>
   )
 }
