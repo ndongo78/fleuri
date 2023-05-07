@@ -1,4 +1,4 @@
-import {  Footer, Header, NewLetters} from "./components"
+import {  Footer, Header} from "./components"
 import {RootRoutes} from "./routes/Routes.tsx";
 import "react-multi-carousel/lib/styles.css";
 const  App=()=> {

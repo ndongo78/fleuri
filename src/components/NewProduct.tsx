@@ -1,5 +1,5 @@
 import {newProductsArray} from "../constants"
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
