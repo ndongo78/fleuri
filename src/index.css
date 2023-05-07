@@ -45,4 +45,19 @@ body {
   .anime{
     display: none;
   }
+  .anime2{
+    width: 50px;
+    height: 50px;
+  }
+  .newLetter{
+    display: flex;
+    flex-direction: column;
+  }
+  .newProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
 }

@@ -3,17 +3,17 @@ import {motion} from "framer-motion";
 
 export const NewLetters = () => {
   return (
-    <div className="lg:flex items-center self-center justify-center bg-[#fdd] w-[100%] h-40 xs:flex flex-col justify-between ">
+    <div className="lg:flex items-center self-center justify-center bg-[#fdd] w-[100%] h-40 newLetter ">
       <motion.div
           className="w-50 mx-3"
-          initial={{x:-150, opacity:0}}
-          whileInView={{x:0,opacity:1,transition:{type:'tween',duration:1}}}
+          initial={{y:150, opacity:0}}
+          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
       >
         <h2 className="lg:text-4xl font-bold text-red-600 xs:mb-4 text-4xl">S'inscrire aux bon plan</h2>
       </motion.div>
       <motion.div
-          initial={{x:400, opacity:0}}
-          whileInView={{x:0,opacity:1,transition:{type:'tween',duration:1}}}
+          initial={{y:50, opacity:0}}
+          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
           className="xs:mt-5"
       >
         <form className="flex ml-4">

@@ -79,7 +79,7 @@ export const NewProduct=()=>{
        newProductsArray.map((item,index)=>(
        <motion.div
       variants={anim(index)}
-        className="lg:m-5 cursor-pointer w-[400px] flex flex-col items-center"
+        className="lg:m-5 cursor-pointer w-[400px] "
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -90,7 +90,7 @@ export const NewProduct=()=>{
         className="w-52 h-52 xs:w-full"
         />
         <h3 className="text-2xl text-red-600 m-2  font-bold text-center">{item.title}</h3>
-        <h3 className="text-xl text-red-600">{item.price}€</h3>
+        <h3 className="text-xl text-red-600 text-center">{item.price}€</h3>
         
         </motion.div>
        ))

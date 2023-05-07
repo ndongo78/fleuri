@@ -15,14 +15,14 @@ export const About = () => {
             </motion.div>
                 <motion.div 
                 className=" bg-slate-200 mt-24 w-72 h-96 flex items-center justify-center border-white border-8"   >
-                <motion.img src={image7} className=' w-72 h-96' alt=""    initial={{x:100, opacity:0,display:"hidden"}}
+                <motion.img src={image7} className=' w-72 h-96' alt=""    initial={{x:-100, opacity:0,display:"hidden"}}
                 whileInView={{x:0,opacity:1,transition:{type:'spring',duration:5},display:"block"}}  />
                 <div
                 className='lg:w-52 h-52 lg:absolute lg:rotate-12
                 lg:right-32 lg:-bottom-14 lg:bg-slate-200
                 leftImage
                 border-white border-8'>
-                <motion.img  initial={{x:-100, opacity:0,}}
+                <motion.img  initial={{x:100, opacity:0,}}
               whileInView={{x:0,opacity:1,transition:{type:'spring',duration:5}}} src={image6}
                              className=' w-52 h-52 absolute' alt=""  />
                 </div>
