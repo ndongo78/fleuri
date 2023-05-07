@@ -1,4 +1,4 @@
-import {About, Category, Hero, NewProduct,NProduct,NewLetters} from "./components";
+import {About, Category, Hero, NewProduct} from "./components";
 import {motion} from "framer-motion";
 import {deco2} from "./assets";
 

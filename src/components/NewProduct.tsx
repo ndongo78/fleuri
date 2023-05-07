@@ -28,7 +28,7 @@ const responsive = {
 export const NewProduct=()=>{
   
 
-  const anim=(index:number)=>{
+ /* const anim=(index:number)=>{
       const cardVariants: Variants = {
         offscreen: {
          y: 70,
@@ -46,7 +46,7 @@ export const NewProduct=()=>{
         }
       };
       return cardVariants
-  }
+  }*/
   return(
      <div className="newProduct m-10 ">
       <div className=" flex justify-between">
@@ -80,7 +80,7 @@ export const NewProduct=()=>{
        <motion.div
         className="m-5 cursor-pointer w-[400px] flex items-center flex-col"
         initial={{y:150, opacity:0}}
-          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
+          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1*index }}}
         >
         <motion.img
         src={item.image} 
