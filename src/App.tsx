@@ -6,10 +6,7 @@ const  App=()=> {
   return (
     < >
     <Header />
-        <RootRoutes />
-     <div>
-     <NewLetters />
-     </div>
+     <RootRoutes />
      <div>
      <Footer />
      </div>

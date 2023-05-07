@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import {categoriesArray} from "../constants"
-
+import {useNavigate} from "react-router-dom"
 
 export const Category=()=>{
+  const navigate=useNavigate()
   return(
      <div className="newProduct m-40  md:flex md:flex-col md:self-center md:justify-self-center sm:flex flex-col">
       <div className=" flex justify-between">
@@ -22,6 +23,7 @@ export const Category=()=>{
        rounded bg-[#fdd] justify-center flex flex-col items-center place-content-center"
        initial={{y:200, opacity:0,display:"hidden",}}
        whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1 * index,},display:"block",}}
+       onClick={()=>navigate(item.path)}
        >
         <img
         src={item.image} 

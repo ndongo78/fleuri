@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { NewLetters } from "./NewLetters";
 import { NewProduct } from "./NewProduct";
+import { NProduct } from "./NProducts";
 
 
 
@@ -15,5 +16,6 @@ export {
     About,
     Category,
     NewLetters,
-    Footer
+    Footer,
+    NProduct
 }

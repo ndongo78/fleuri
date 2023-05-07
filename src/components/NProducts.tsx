@@ -3,29 +3,20 @@ import { Variants, motion } from "framer-motion"
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Slider from "react-slick";
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    };
 
-export const NewProduct=()=>{
+export const NProduct=()=>{
   
 
   const anim=(index:number)=>{
@@ -55,37 +46,21 @@ export const NewProduct=()=>{
       <button className="lg:border text-red-700  border-red-600 p-3 w-36 font-bold hover:bg-[#eb86b8]">Voir plus</button>
      </div>
       </div>
-     <Carousel
-     containerClass="carousel"
-     responsive={responsive}
-     ssr
-     arrows
-     customLeftArrow={
-      <AiOutlineArrowLeft
-        className="absolute left-2 cursor-pointer bg-slate-800 rounded-full text-white p-3"
-        size={45}
-      />
-     }
-     customRightArrow={
-      <AiOutlineArrowRight
-        className="absolute right-2 cursor-pointer bg-slate-800 rounded-full text-white p-3"
-        size={45}
-      />
-     }
-     
+     <Slider {...settings}
      >
   
      {
        newProductsArray.map((item,index)=>(
        <motion.div
-        className="m-5 cursor-pointer w-[400px] flex items-center flex-col"
-        initial={{y:150, opacity:0}}
-          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
+        className="lg:m-5 cursor-pointer w-[400px] "
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         >
         <motion.img
         src={item.image} 
         alt={item.title} 
-        className="w-52 h-52 xs:w-full"
+        className="w-52 h-52"
         />
         <h3 className="text-2xl text-red-600 m-2  font-bold text-center">{item.title}</h3>
         <h3 className="text-xl text-red-600 text-center">{item.price}€</h3>
@@ -93,7 +68,7 @@ export const NewProduct=()=>{
         </motion.div>
        ))
      }
-     </Carousel>
+     </Slider>
      </div>
     )
 }

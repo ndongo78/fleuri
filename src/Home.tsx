@@ -1,4 +1,4 @@
-import {About, Category, Hero, NewProduct} from "./components";
+import {About, Category, Hero, NewProduct,NProduct,NewLetters} from "./components";
 import {motion} from "framer-motion";
 import {deco2} from "./assets";
 
@@ -14,6 +14,7 @@ export const Home = () => {
             <Category />
             <motion.img src={deco2} alt=""  initial={{opacity:0,x:-100}} whileInView={{opacity:1,x:0,rotate:180,transition:{duration:1}}}
              className="w-52  absolute  -rotate-180 -right-6 anime"  />
+            <NewLetters />
         </div>
     );
 };

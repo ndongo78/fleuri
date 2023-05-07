@@ -21,9 +21,9 @@ export const newProductsArray=[
   import love from "../assets/love.png"
 
   export const categoriesArray=[
-    {title:"Anniversaire",image: aniv},
-    {title:"Deuil",image: deuil},
-    {title:"Evénement",image: event},
-    {title:"Mariage",image: mari},
-    {title:"Coup de cøeur",image: love},
+    {title:"Anniversaire",image: aniv,path:"anniversaire"},
+    {title:"Deuil",image: deuil, path:"deuil"},
+    {title:"Evénement",image: event,path:"évenement"},
+    {title:"Mariage",image: mari,path:"mariage"},
+    {title:"Coup de cøeur",image: love, path:"love"},
     ]
