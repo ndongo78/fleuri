@@ -1,5 +1,5 @@
 import { deco3, hero } from '../assets'
-import { Variants, motion } from "framer-motion"
+import {  motion } from "framer-motion"
 
 export const Hero = () => {
 

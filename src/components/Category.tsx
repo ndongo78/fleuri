@@ -6,7 +6,10 @@ export const Category=()=>{
   return(
      <div className="newProduct m-40  md:flex md:flex-col md:self-center md:justify-self-center sm:flex flex-col">
       <div className=" flex justify-between">
-     <h2 className="text-5xl m-8 text-red-600 ">Nos Catégories </h2> 
+     <motion.h2
+         initial={{y:50, opacity:0}}
+         whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
+         className="text-5xl m-8 text-red-600 ">Chaque évenement de la vie avec son bouquet de fleur </motion.h2>
      <div className="button">
       {/* <button className=" border text-red-700 border-red-600 p-3 w-36 font-bold hover:bg-[#eb86b8]">Voir plus</button> */}
      </div>
@@ -15,7 +18,7 @@ export const Category=()=>{
      {
        categoriesArray.map((item,index)=>(
        <motion.div 
-       className="m-2 cursor-pointer w-[300px] shadow 
+       className="m-2 cursor-pointer w-[200px] shadow
        rounded bg-[#fdd] justify-center flex flex-col items-center place-content-center"
        initial={{y:200, opacity:0,display:"hidden",}}
        whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1 * index,},display:"block",}}
