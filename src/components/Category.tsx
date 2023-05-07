@@ -9,7 +9,7 @@ export const Category=()=>{
      <motion.h2
          initial={{y:50, opacity:0}}
          whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1}}}
-         className="text-5xl m-8 text-red-600 ">Chaque évenement de la vie avec son bouquet de fleur </motion.h2>
+         className="lg:text-5xl m-8 text-red-600 xs:m-0 text-3xl">Chaque évenement de la vie avec son bouquet de fleur </motion.h2>
      <div className="button">
       {/* <button className=" border text-red-700 border-red-600 p-3 w-36 font-bold hover:bg-[#eb86b8]">Voir plus</button> */}
      </div>

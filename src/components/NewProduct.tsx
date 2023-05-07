@@ -51,12 +51,12 @@ export const NewProduct=()=>{
      <div className="newProduct m-10 ">
       <div className=" flex justify-between">
      <h2 className="text-5xl m-8 text-red-600 ">Nouveaux arrivages</h2> 
-     <div className="button">
-      <button className=" border text-red-700 border-red-600 p-3 w-36 font-bold hover:bg-[#eb86b8]">Voir plus</button>
+     <div className=" visible xs:invisible">
+      <button className="lg:border text-red-700  border-red-600 p-3 w-36 font-bold hover:bg-[#eb86b8]">Voir plus</button>
      </div>
       </div>
-     <Carousel 
-     className=" relative"
+     <Carousel
+     containerClass="carousel"
      responsive={responsive}
      ssr
      arrows
@@ -79,7 +79,7 @@ export const NewProduct=()=>{
        newProductsArray.map((item,index)=>(
        <motion.div
       variants={anim(index)}
-        className="m-5 cursor-pointer w-[500px] flex flex-col items-center"
+        className="lg:m-5 cursor-pointer w-[400px] flex flex-col items-center"
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
@@ -87,7 +87,7 @@ export const NewProduct=()=>{
         <motion.img
         src={item.image} 
         alt={item.title} 
-        className="w-52 h-52"
+        className="w-52 h-52 xs:w-full"
         />
         <h3 className="text-2xl text-red-600 m-2  font-bold text-center">{item.title}</h3>
         <h3 className="text-xl text-red-600">{item.price}€</h3>

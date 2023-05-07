@@ -5,7 +5,7 @@ import {categoriesArray} from "../constants";
 
 export const Footer = () => {
   return (
-    <motion.div className="flex justify-around mt-10">
+    <motion.div className="lg:flex flex-row justify-around mt-10 footer">
      <motion.div className="flex flex-col "
      initial={{y:100, opacity:0,display:"hidden",}}
      whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1},display:"block",}}

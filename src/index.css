@@ -26,7 +26,23 @@
 body {
   margin: 0 ;
 }
-
+.carousel{
+  width: 100%;
+}
 .newProduct{
   margin-top: 80px;
+}
+
+@media  (max-width: 468px) {
+   .leftImage{
+     display: none;
+   }
+  .footer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .anime{
+    display: none;
+  }
 }

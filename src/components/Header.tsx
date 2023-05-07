@@ -9,8 +9,8 @@ export const Header = () => {
   const [isHoverPanier, setisHoverPanier] = useState(false)
   const [isHoverSearch, setisHoverSearch] = useState(false)
   return (
-        <nav className=' flex justify-evenly items-center'>
-          <div className="logo relative justify-center items-center">
+        <nav className='lg:flex lg:justify-evenly lg:items-center'>
+          <div className="logo relative justify-center items-center md:visible sm:invisible ">
              <h2 className='xs:relative absolute top-7 left-8 right-6 bottom-7 text-2xl font-bold font-cursive text-ellipsis text-center text-cyan-300'>Fleuri</h2>
             <img src={logo} alt=""  className=' w-32 h-32 p-5'/>
           </div>
