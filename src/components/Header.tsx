@@ -3,6 +3,7 @@ import { logo } from '../assets'
 import { IoSearchOutline,IoCartOutline} from "react-icons/io5";
 import {AiOutlineUser} from "react-icons/ai"
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom"
 
 export const Header = () => {
   const [isHover, setisHover] = useState(false)
@@ -20,19 +21,22 @@ export const Header = () => {
                 whileHover={{ scale: [null, 1.5, 1.4] ,margin:10,color:"blue",letterSpacing:2}}
                 transition={{ duration: 0.3 }}
                 className=' p-4 text-xl font-semibold leading-4 cursor-pointer text-red-500'
-            >Accueil
+            >
+                    <Link to="/">Accueil</Link>
            </motion.li>
                 <motion.li
                  className=' p-4 text-xl font-semibold leading-4 cursor-pointer text-red-500'
                  whileHover={{ scale: [null, 1.5, 1.4] ,margin:10,color:"blue",letterSpacing:2}}
                  transition={{ duration: 0.3 }}
-                 > produits
+                 >
+                    <Link to="/products">produits</Link>
                  </motion.li>
                 <motion.li 
                 className=' p-4 text-xl font-semibold leading-4 cursor-pointer text-red-500'
                 whileHover={{ scale: [null, 1.5, 1.4] ,margin:10,color:"blue",letterSpacing:2}}
                 transition={{ duration: 0.3 }}
-                > contact
+                >
+                    <Link to="/contact">contact</Link>
                 </motion.li>
               </ul>
           </div>

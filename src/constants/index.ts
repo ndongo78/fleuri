@@ -11,6 +11,8 @@ export const newProductsArray=[
   {title:"Bouquet R pastel",descript:"",price:30,image: image3},
   {title:"Bouquet R tendre",descript:"",price:18,image: image4},
   {title:"Bouquet Arrabel",descript:"",price:10,image: image5},
+  {title:"Bouquet Aurore",descript:"",price:50,image: image1},
+  {title:"Bouquet Pouline",descript:"",price:10,image: image5},
   ]
 
   //categories
