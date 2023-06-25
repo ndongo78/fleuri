@@ -47,11 +47,13 @@ export const Header = () => {
                 transition={{ duration: 0.3 }}
                 className='text-center flex flex-col items-center justify-center cursor-pointer '
                 >
-            <AiOutlineUser className=' text-3xl m-4  cursor-pointer text-red-500' />
+           <Link to='/login'>
+           <AiOutlineUser className=' text-3xl m-4  cursor-pointer text-red-500' />
             {
               isHover &&
                 <motion.p>Compte</motion.p>
             }
+           </Link>
             </motion.div>
             <motion.div onMouseEnter={()=>setisHoverPanier(true)} 
             onMouseLeave={()=>setisHoverPanier(false)}

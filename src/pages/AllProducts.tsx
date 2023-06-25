@@ -1,10 +1,12 @@
 import {SideBarItem} from "../components/SideBarItem.tsx";
 import {newProductsArray} from "../constants";
 import {CardProduct} from "../components";
+import { useGetProductsQuery } from "../app/api/productApi.ts";
 
 export const AllProducts=()=>{
     const shuffle = (arr:any) => [...arr].sort(() => Math.random() - 0.5);
     const newList = shuffle(newProductsArray);
+    const {data,isLoading}= useGetProductsQuery('')
 
     return (
         <>
@@ -18,13 +20,16 @@ export const AllProducts=()=>{
                 <SideBarItem sousTitre={"Nouveau arrivage"}  handleChange={()=>{}}/>
                 <SideBarItem sousTitre={"Saison"}  handleChange={()=>{}}/>
             </div>
-            <div className="contain flex flex-wrap m-10 gap-x-24 gap-y-10">
+             {
+                isLoading ? <p>Loading...</p>
+                :<div className="contain flex flex-wrap m-10 gap-x-24 gap-y-10">
                 {
-                    newList.map((item,index)=>(
+                    data.map((item:any,index:number)=>(
                         <CardProduct item={item} index={index} />
                     ))
                 }
             </div>
+             }
         </div>
         <div style={{border:"0.1px solid #fce"}} />
         </>
