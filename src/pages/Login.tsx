@@ -1,11 +1,23 @@
-import React from 'react'
+import jwt_decode from "jwt-decode";
 import { Formik } from "formik";
 import * as yup from 'yup';
 import { useLoginMutation } from '../app/api/authApi';
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import { useEffect } from "react";
 
 export const Login = () => {
  const [login]= useLoginMutation()
+ const navigate=useNavigate()
+
+
+ useEffect(() => {
+   const existing = sessionStorage.getItem('user')
+   if (existing){
+    navigate('/profil')
+   }
+   
+ }, [])
+ 
 
 
    const handleSumbit=(values:{username:string,password:string}) => {
@@ -23,7 +35,10 @@ export const Login = () => {
       login(data)
       .unwrap()
       .then((data) => {
-         console.log("data", data)
+        const user_id:string= jwt_decode(data.access_token)
+         sessionStorage.setItem("user", user_id)
+         //console.log("data", user_id)
+         navigate("/profil")
       })
       .catch((error) => {
         console.log("data", error)
@@ -43,7 +58,7 @@ export const Login = () => {
     )
 
   return (
-    <div className=' h-screen'>
+    <div className='text-red-400'>
 <section className="py-26">
   <div className="container px-4 mx-auto">
     <div className="max-w-lg mx-auto py-8">
@@ -98,14 +113,15 @@ export const Login = () => {
           </div>
           <div className="w-full lg:w-auto px-4"><a className="inline-block font-extrabold hover:underline" href="#">Mot de passe oubliée?</a></div>
         </div>
-        <button onClick={()=>handleSubmit()} className="inline-block w-full py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-[#e54] hover:bg-[#e54] border-3 border-indigo-900 shadow rounded-xl transition duration-200">Sign in</button>
-        <p className="text-center font-extrabold">Vous n'avez pas de compte? <a className="text-red-500 hover:underline" href="#">S'inscrire</a></p>
+        <button onClick={()=>handleSubmit()} className="inline-block w-full py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-[#e54] hover:bg-[#e54] border-3 border-indigo-900 shadow rounded-xl transition duration-200">Se connecter</button>
+        <p className="text-center font-extrabold">Vous n'avez pas de compte? <Link to="/register" className="text-red-500 hover:underline decoration-none">S'inscrire</Link></p>
             </>
           )}
           </Formik>
     </div>
   </div>
 </section>
+<div style={{border:"0.1px solid #fce"}} />
     </div>
   )
 }

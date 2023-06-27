@@ -4,6 +4,8 @@ import {AllProducts, BirthDay} from "../pages";
 import { Login } from "../pages/Login.tsx";
 import { Cart } from "../pages/Cart.tsx";
 import Profil from "../pages/Profil.tsx";
+import { Register } from "../pages/Register.tsx";
+import { Contact } from "../pages/Contact.tsx";
 
 
 
@@ -21,8 +23,10 @@ export function RootRoutes() {
         <Route  path="/mariage" element={<BirthDay />}  />
         <Route  path="/love" element={<BirthDay />}  />
         <Route  path="/login" element={<Login />}  />
+        <Route  path="/register" element={<Register />}  />
         <Route  path="/cart" element={<Cart />}  />
         <Route  path="/profil" element={<Profil />}  />
+        <Route  path="/contact" element={<Contact />}  />
         </Routes>
     );
 }

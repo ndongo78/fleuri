@@ -28,7 +28,7 @@ export const authApi=createApi({
      }),
     register:builder.mutation({
       query:(user)=>({
-        url:"api/users",
+        url:"api/users/create",
         method:"POST",
         body:user
       }) ,

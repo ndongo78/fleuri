@@ -1,11 +1,8 @@
 import {SideBarItem} from "../components/SideBarItem.tsx";
-import {newProductsArray} from "../constants";
 import {CardProduct} from "../components";
 import { useGetProductsQuery } from "../app/api/productApi.ts";
 
 export const AllProducts=()=>{
-    const shuffle = (arr:any) => [...arr].sort(() => Math.random() - 0.5);
-    const newList = shuffle(newProductsArray);
     const {data,isLoading}= useGetProductsQuery('')
 
     return (
