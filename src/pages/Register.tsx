@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useRegisterMutation } from "../app/api/authApi";
 import { AlertBox } from "../components/AlertBox";
+import {Link} from "react-router-dom" 
 
 export const Register = () => {
   const [register] = useRegisterMutation();
@@ -190,7 +191,7 @@ export const Register = () => {
                   </button>
                   <p className="text-center font-extrabold">
                     Vous avez déja un compte?{" "}
-                    <a className="text-red-500 hover:underline" href="#">
+                    <Link to="/login" className="text-red-500 hover:underline" href="#">
                       Se connecter
                     </a>
                   </p>
