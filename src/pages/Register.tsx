@@ -16,7 +16,7 @@ export const Register = () => {
   }) => {
     register(values)
       .unwrap()
-      .then((data) => {
+      .then(() => {
         setisSucces(true);
       })
       .catch((error) => {

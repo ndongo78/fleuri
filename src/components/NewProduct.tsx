@@ -1,4 +1,4 @@
-import {newProductsArray} from "../constants"
+//import {newProductsArray} from "../constants"
 import { motion } from "framer-motion"
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Carousel from "react-multi-carousel";
@@ -27,7 +27,7 @@ const responsive = {
 };
 
 export const NewProduct=()=>{
-  const URL=import.meta.env.VITE_API_URL
+  //const URL=import.meta.env.VITE_API_URL
   const {data,isLoading}= useGetProductsQuery('')
 
   // console.log('New Product', data)

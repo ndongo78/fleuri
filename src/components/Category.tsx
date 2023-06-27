@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import {categoriesArray} from "../constants"
+//import {categoriesArray} from "../constants"
 import {useNavigate} from "react-router-dom"
 import { useGetCategoriesQuery } from "../app/api/productApi"
 
