@@ -22,7 +22,7 @@ export const CardProduct=({item,index}: Props) =>{
             onClick={()=>navigate("")}
             key={index}
         >
-            <img src={`http://localhost:8000/${item.image}` }  alt={item.title} />
+            <img src={import.meta.env.VITE_API_URL+item.image }  alt={item.title} />
             <h2 className="text-red-600 text-3xl text-center">{item.title}</h2>
             <h2 className="text-red-600 text-3xl text-center mt-3">{item.price}€</h2>
         </motion.div>

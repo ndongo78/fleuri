@@ -27,7 +27,7 @@ const responsive = {
 };
 
 export const NewProduct=()=>{
-  
+  const URL=import.meta.env.VITE_API_URL
   const {data,isLoading}= useGetProductsQuery('')
 
   // console.log('New Product', data)
@@ -89,7 +89,7 @@ export const NewProduct=()=>{
                whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1*index }}}
              >
              <motion.img
-             src={`http://localhost:8000/${item.image}` } 
+             src={`${import.meta.env.VITE_API_URL}${item.image}` } 
              alt={item.title} 
              className="w-52 h-52 xs:w-full"
              />
