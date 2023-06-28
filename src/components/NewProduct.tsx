@@ -93,9 +93,11 @@ export const NewProduct=()=>{
              alt={item.title} 
              className="w-52 h-52 xs:w-full"
              />
+             <div className="flex flex-col items-center gap-4">
              <h3 className="text-2xl text-red-600 m-2  font-bold text-center">{item.title}</h3>
              <h3 className="text-xl text-red-600 text-center">{item.price}€</h3>
-             
+             <button className="bg-red-400 w-[200px] p-4 rounded-lg m-auto text-white  font-bold">Ajouter au panier</button>
+             </div>
              </motion.div>
             ))
           }

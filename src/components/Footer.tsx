@@ -1,9 +1,15 @@
 
 import {motion} from "framer-motion";
 import {AiOutlineInstagram, AiOutlineMail, BsTelephone, CiFacebook, CiTwitter, RiMapPinLine} from "react-icons/all";
-import {categoriesArray} from "../constants";
+import { useGetCategoriesQuery } from "../app/api/productApi";
 
 export const Footer = () => {
+  const categories:{name:string, _id:string , path:string, image: string}[] = [];
+  const {data}= useGetCategoriesQuery('')
+   if(data){
+    data.map((category: {name:string, _id:string , path:string, image: string}) => categories.push({...category,path: category.name ==="Coup De Coeur" ? '/amour' : `/${category.name}`}))
+   }
+ 
   return (
     <motion.div className="flex flex-row justify-around mt-10 footer">
      <motion.div className="flex flex-col "
@@ -59,8 +65,8 @@ export const Footer = () => {
       >
         <h2 className="text-2xl font-bold -ml-2">Catégories</h2>
           {
-          categoriesArray.map((category)=><div className="flex items-center mt-3">
-              <a href="">{category.title}</a>
+          categories?.map((category)=><div className="flex items-center mt-3" key={category.name}>
+              <a href="" >{category.name}</a>
           </div>
           )
           }
@@ -72,8 +78,8 @@ export const Footer = () => {
             <h2 className="text-2xl font-bold -ml-2">Blog</h2>
             <div className="w-48 flex flex-wrap gap-4">
             {
-            categoriesArray.map((category)=><div className="flex items-center mt-2 ">
-                <a href="" className="w-20 h-10 ">
+            categories.map((category)=><div className="flex items-center mt-2 " key={category.name}>
+                <a href="" className="w-20 h-10 " >
                   <img src={category.image} alt={""} className=""/>
                 </a>
                 </div>

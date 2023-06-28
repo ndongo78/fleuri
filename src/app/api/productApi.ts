@@ -17,11 +17,17 @@ export const productApi=createApi({
             url:'/api/categories'
            }),
            providesTags:["product"]
-        })
+        }),
+        getArticleByCategory: builder.query({
+            query:(id:string)=>({
+                url: `/api/articles/${id}`,
+            })
+        }),
     })
 })
 
 export const {
     useGetProductsQuery,
-    useGetCategoriesQuery
+    useGetCategoriesQuery,
+    useGetArticleByCategoryQuery
 }= productApi

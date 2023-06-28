@@ -4,11 +4,17 @@ import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { productState } from "../app/reducers/product";
 
 export const Header = () => {
   const [isHover, setisHover] = useState(false);
   const [isHoverPanier, setisHoverPanier] = useState(false);
   const [isHoverSearch, setisHoverSearch] = useState(false);
+
+  const {cart}= useSelector(productState)
+
+
   return (
     <nav className="flex justify-evenly items-center ">
       <div className="logo relative justify-center items-center md:visible sm:invisible ">
@@ -87,7 +93,8 @@ export const Header = () => {
           transition={{ duration: 0.3 }}
           className="text-center flex flex-col items-center justify-center cursor-pointer text-red-500 "
         >
-          <Link to="/cart">
+          <Link to="/cart" className=" relative">
+          <motion.p className=" absolute text-center right-0 text-white bg-red-600 rounded-full w-6"> {cart.length} </motion.p>
             <IoCartOutline className=" text-3xl m-4 cursor-pointer" />
             {isHoverPanier && <motion.p>Pannier</motion.p>}
           </Link>

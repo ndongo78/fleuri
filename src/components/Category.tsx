@@ -1,12 +1,14 @@
 import { motion } from "framer-motion"
-//import {categoriesArray} from "../constants"
-import {useNavigate} from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 import { useGetCategoriesQuery } from "../app/api/productApi"
 
 export const Category=()=>{
   const navigate=useNavigate()
-
+  const categories:{name:string, _id:string , path:string, image: string}[] = [];
   const {data, isLoading}= useGetCategoriesQuery('')
+   if(data){
+    data.map((category: {name:string, _id:string , path:string, image: string}) => categories.push({...category,path: category.name ==="Coup De Coeur" ? '/amour' : `/${category.name}`}))
+   }
  
   return(
      <div className="newProduct m-40  md:flex md:flex-col md:self-center md:justify-self-center sm:flex flex-col">
@@ -23,13 +25,13 @@ export const Category=()=>{
       isLoading ? <p>Loading</p>
       :<div className="md:flex md:flex-row md:items-center sm:flex-col  flex-wrap gap-2 self-center mt-10">
       {
-        data?.map((item:any,index:number)=>(
+        categories.map((item,index:number)=>(
         <motion.div 
         className="m-2 cursor-pointer w-[250px] shadow
         rounded bg-[#fdd] justify-center flex flex-col items-center place-content-center"
         initial={{y:200, opacity:0,display:"hidden",}}
         whileInView={{y:0,opacity:1,transition:{type:'tween',duration:1 * index,},display:"block",}}
-        onClick={()=>navigate(item.path)}
+        onClick={()=>navigate(item.path, {state: {id: item._id}})}
         key={index}
         >
          <img

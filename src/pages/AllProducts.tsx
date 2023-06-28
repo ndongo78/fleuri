@@ -1,9 +1,15 @@
 import {SideBarItem} from "../components/SideBarItem.tsx";
 import {CardProduct} from "../components";
 import { useGetProductsQuery } from "../app/api/productApi.ts";
+import { useDispatch } from "react-redux";
+import { setProducts } from "../app/reducers/product.ts";
 
 export const AllProducts=()=>{
+    const dispatch = useDispatch()
     const {data,isLoading}= useGetProductsQuery('')
+    if(data){
+        dispatch(setProducts(data))
+    }
 
     return (
         <>
@@ -22,7 +28,7 @@ export const AllProducts=()=>{
                 :<div className="contain flex flex-wrap m-10 gap-x-24 gap-y-10">
                 {
                     data.map((item:any,index:number)=>(
-                        <CardProduct item={item} index={index} />
+                        <CardProduct item={item} index={index} key={item._id}/>
                     ))
                 }
             </div>

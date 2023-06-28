@@ -191,9 +191,9 @@ export const Register = () => {
                   </button>
                   <p className="text-center font-extrabold">
                     Vous avez déja un compte?{" "}
-                    <Link to="/login" className="text-red-500 hover:underline" href="#">
+                    <Link to="/login" className="text-red-500 hover:underline" >
                       Se connecter
-                    </a>
+                    </Link>
                   </p>
                 </>
               )}

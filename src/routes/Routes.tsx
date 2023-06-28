@@ -6,6 +6,8 @@ import { Cart } from "../pages/Cart.tsx";
 import Profil from "../pages/Profil.tsx";
 import { Register } from "../pages/Register.tsx";
 import { Contact } from "../pages/Contact.tsx";
+import { Mariage } from "../pages/Mariage.tsx";
+import { Detail } from "../pages/Detail.tsx";
 
 
 
@@ -20,13 +22,14 @@ export function RootRoutes() {
         <Route  path="/anniversaire" element={<BirthDay />}  />
         <Route  path="/deuil" element={<BirthDay />}  />
         <Route  path="/évenement" element={<BirthDay />}  />
-        <Route  path="/mariage" element={<BirthDay />}  />
-        <Route  path="/love" element={<BirthDay />}  />
+        <Route  path="/mariage" element={<Mariage />}  />
+        <Route  path="/amour" element={<BirthDay />}  />
         <Route  path="/login" element={<Login />}  />
         <Route  path="/register" element={<Register />}  />
         <Route  path="/cart" element={<Cart />}  />
         <Route  path="/profil" element={<Profil />}  />
         <Route  path="/contact" element={<Contact />}  />
+        <Route  path="/:id/detail" element={<Detail />}  />
         </Routes>
     );
 }

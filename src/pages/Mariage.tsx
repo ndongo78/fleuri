@@ -4,9 +4,10 @@ import {useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import { useGetArticleByCategoryQuery } from "../app/api/productApi.ts";
 
-export const BirthDay=()=>{
+export const Mariage=()=>{
     const location = useLocation();
    const {data, isLoading}= useGetArticleByCategoryQuery(location.state.id)
+
 
 
     useEffect(()=>{
