@@ -29,7 +29,7 @@ export function RootRoutes() {
         <Route  path="/cart" element={<Cart />}  />
         <Route  path="/profil" element={<Profil />}  />
         <Route  path="/contact" element={<Contact />}  />
-        <Route  path="/:id/detail" element={<Detail />}  />
+        <Route  path="/detail/:id" element={<Detail />}  />
         </Routes>
     );
 }
