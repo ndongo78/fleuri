@@ -8,19 +8,19 @@ export const productApi=createApi({
     endpoints:(builder)=>({
         getProducts: builder.query({
             query:()=>({
-                url: "/api/articles"
+                url: "api/articles"
             }),
             providesTags:["product"]
         }),
         getCategories: builder.query({
            query: ()=>({
-            url:'/api/categories'
+            url:'api/categories'
            }),
            providesTags:["product"]
         }),
         getArticleByCategory: builder.query({
             query:(id:string)=>({
-                url: `/api/articles/${id}`,
+                url: `api/articles/${id}`,
             })
         }),
     })

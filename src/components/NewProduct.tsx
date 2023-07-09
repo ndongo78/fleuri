@@ -29,6 +29,8 @@ const responsive = {
 export const NewProduct=()=>{
   //const URL=import.meta.env.VITE_API_URL
   const {data,isLoading}= useGetProductsQuery('')
+  
+ // console.log(data)
 
   // console.log('New Product', data)
 
@@ -60,7 +62,7 @@ export const NewProduct=()=>{
      </div>
       </div>
          {
-          isLoading ? <p>Loading</p>
+          isLoading  ? <p>Loading</p>
           :    <Carousel
           containerClass="carousel"
           responsive={responsive}
