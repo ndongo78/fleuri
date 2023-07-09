@@ -24,6 +24,9 @@ export const BirthDay=()=>{
           <SideBarItem sousTitre={"Nouveau arrivage"}  handleChange={()=>{}}/>
           <SideBarItem sousTitre={"Saison"}  handleChange={()=>{}}/>
       </div>
+       {
+        data?.length === 0 && <div className=" flex justify-center items-center self-center text-4xl w-full">Pas d'articles pour cette catégorie</div>
+       }
          {
             isLoading ? <div>Loading......</div>
             :<div className="contain flex flex-wrap m-10 gap-x-24 gap-y-10">

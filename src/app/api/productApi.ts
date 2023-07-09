@@ -19,7 +19,7 @@ export const productApi=createApi({
            providesTags:["product"]
         }),
         getArticleByCategory: builder.query({
-            query:(id:string)=>({
+            query:(id:string | undefined)=>({
                 url: `api/articles/${id}`,
             })
         }),

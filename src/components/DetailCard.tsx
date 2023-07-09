@@ -1,8 +1,5 @@
 import {motion} from "framer-motion";
-import { useDispatch } from "react-redux";
 import {Link} from "react-router-dom";
-import { setCart } from "../app/reducers/product";
-import { CiShoppingCart } from "react-icons/ci";
 import { SingleProduct } from "../types";
 
 
@@ -11,8 +8,7 @@ type Props = {
     index:number
 };
 
-export const CardProduct=({item,index}: Props) =>{
-    const dispatch= useDispatch();
+export const DetailCard=({item,index}: Props) =>{
     return (
         <motion.div
             className="w-[350px]  cursor-pointer flex items-center justify-center"
@@ -26,11 +22,7 @@ export const CardProduct=({item,index}: Props) =>{
             <h2 className="text-red-600 text-3xl text-center mt-4">{item.title}</h2>
             <h2 className="text-red-600 text-3xl text-center mt-3">{item.price}€</h2>
             </Link>
-            <button onClick={()=>dispatch(setCart(item))} 
-            className="border border-red-500 p-2 rounded-lg m-auto text-red-400  font-bold flex items-center"
-            > <CiShoppingCart size={35}/>
-             <span className="ml-1">Ajouter au panier</span>
-             </button>
+          
             </div>
             
         </motion.div>

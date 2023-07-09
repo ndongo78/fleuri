@@ -21,7 +21,7 @@ export function RootRoutes() {
         <Route  path="/products" element={<AllProducts />}  />
         <Route  path="/anniversaire" element={<BirthDay />}  />
         <Route  path="/deuil" element={<BirthDay />}  />
-        <Route  path="/évenement" element={<BirthDay />}  />
+        <Route  path="/Evenements" element={<BirthDay />}  />
         <Route  path="/mariage" element={<Mariage />}  />
         <Route  path="/amour" element={<BirthDay />}  />
         <Route  path="/login" element={<Login />}  />

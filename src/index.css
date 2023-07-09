@@ -35,6 +35,10 @@ body {
 .footer h2{
   color: red;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 @media  (max-width: 468px) {
   nav{
     display: flex;
@@ -89,4 +93,5 @@ body {
   .drawer{
     display: none;
   }
+  
 }
