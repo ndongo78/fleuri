@@ -88,7 +88,7 @@ export const BirthDay=()=>{
             isLoading ? <div>Loading......</div>
             :<div className="contain flex flex-wrap m-10 gap-x-24 gap-y-10">
             {
-                data?.map((item:any,index:number)=>(
+                sortedData?.map((item:any,index:number)=>(
                     <CardProduct item={item} index={index} />
                 ))
             }
