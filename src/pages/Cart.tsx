@@ -44,7 +44,7 @@ export const Cart = () => {
                   {title}{" "}
                 </h2>
                 <div className=" text-sm"> {description} </div>
-                <h3 className=" text-2xl font-bold text-[#e2f] mb-3 mt-3">Prix: {price}€ </h3>
+                <h3 className=" text-2xl font-bold text-[#e2f] mb-3 mt-3">Prix: {price * qty}€ </h3>
                 <div className=" flex items-center gap-4">
                   <IoIosRemoveCircleOutline size={30} className="text-[#e2f] cursor-pointer" onClick={()=>dispatch(removeQty({
             title,
