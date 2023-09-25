@@ -79,6 +79,10 @@ export const Cart = () => {
           )
         )
       )}
+      {
+        cart.length > 0 && <button onClick={()=>{}} className="inline-block w-[250px] py-4 px-6 mb-6 text-center text-lg leading-6 text-white font-extrabold bg-[#e54] hover:bg-[#e54] border-3 border-indigo-900 shadow rounded-xl transition duration-200">Payer ma commande</button>
+
+      }
     </div>
   );
 };
